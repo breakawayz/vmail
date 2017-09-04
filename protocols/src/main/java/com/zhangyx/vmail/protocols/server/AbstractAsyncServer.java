@@ -93,7 +93,6 @@ public abstract class AbstractAsyncServer implements ProtocolServer {
         started = false;
     }
 
+    // 创建初始化的channel
     protected abstract ChannelInitializer createChannelInitializer();
-
-
 }
