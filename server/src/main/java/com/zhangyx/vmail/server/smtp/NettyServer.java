@@ -58,6 +58,7 @@ public class NettyServer {
         logger.info("服务器已经启动！！！");
         // 等待关闭,同步端口
         channel.closeFuture().sync();
+        logger.info("服务器已经启动2！！！");
     }
 
     @PreDestroy

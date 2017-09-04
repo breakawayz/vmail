@@ -38,7 +38,7 @@ import java.net.UnknownHostException;
 import java.util.*;
 
 /**
- * Provides DNS client functionality to services running inside James
+ * 提供dns查询服务
  */
 @Service("dnsService")
 public class DNSServiceImpl implements DNSService, Configurable {
