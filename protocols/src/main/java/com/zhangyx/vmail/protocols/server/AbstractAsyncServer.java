@@ -69,6 +69,7 @@ public abstract class AbstractAsyncServer implements ProtocolServer {
         bootstrap = new ServerBootstrap();
         bossGroup = new NioEventLoopGroup();
         workerGroup = new NioEventLoopGroup(ioWorker);
+
         bootstrap.group(bossGroup, workerGroup)
                 .channel(NioServerSocketChannel.class);
         ChannelInitializer channelInitializer = createChannelInitializer();
@@ -95,4 +96,26 @@ public abstract class AbstractAsyncServer implements ProtocolServer {
 
     // 创建初始化的channel
     protected abstract ChannelInitializer createChannelInitializer();
+
+    public void setTimeout(int timeout) {
+        if (started) throw new IllegalStateException("Can only be set when the server is not running");
+        this.timeout = timeout;
+    }
+
+    public void setBacklog(int backlog) {
+        if (started) throw new IllegalStateException("Can only be set when the server is not running");
+        this.backlog = backlog;
+    }
+
+    public int getBacklog() {
+        return backlog;
+    }
+
+    public int getTimeout() {
+        return timeout;
+    }
+
+    public boolean isBound() {
+        return started;
+    }
 }
