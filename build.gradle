@@ -26,6 +26,12 @@ allprojects {
     dependencies {
         compile('org.springframework.boot:spring-boot-starter-web')
         compile('org.springframework.boot:spring-boot-starter-actuator')
+        compile('org.springframework.boot:spring-boot-starter-logging')
+        compile('commons-configuration:commons-configuration:1.10')
+        compile('commons-collections:commons-collections:3.2.2')
+        compile('com.google.guava:guava:19.0')
+        compile('commons-beanutils:commons-beanutils:1.9.3')
+        compile('dnsjava:dnsjava:2.1.1')
         compile('io.netty:netty-all:4.1.15.Final')
         compileOnly('org.projectlombok:lombok')
         testCompile('org.springframework.boot:spring-boot-starter-test')

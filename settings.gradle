@@ -3,4 +3,6 @@ include 'server'
 include 'dao'
 include 'common'
 include 'protocols'
+include 'dnsserver'
+include 'manager'
 
