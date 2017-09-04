@@ -2,4 +2,5 @@ rootProject.name = 'vmail'
 include 'server'
 include 'dao'
 include 'common'
+include 'protocols'
 
