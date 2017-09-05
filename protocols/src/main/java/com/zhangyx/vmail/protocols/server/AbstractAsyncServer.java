@@ -85,7 +85,7 @@ public abstract class AbstractAsyncServer implements ProtocolServer {
     }
 
     public synchronized void stop() {
-        if (started == false) return;
+        if (!started) return;
         bossGroup.shutdownGracefully();
         workerGroup.shutdownGracefully();
         channels.close().awaitUninterruptibly();
